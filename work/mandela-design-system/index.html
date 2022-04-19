@@ -39,9 +39,14 @@
 
 
 
-  <link rel="stylesheet" href="/assets/asset.64e301fe.css"></link><script type="module" src="/entry.d78a19ec9.js" astro-script="/work/mandela-design-system/script-0"></script>
+    <script>
+      if (matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.add("dark");
+      }
+    </script>
+  <link rel="stylesheet" href="/assets/asset.60c27b68.css"></link><script type="module" src="/entry.03769c049.js" astro-script="/work/mandela-design-system/script-0"></script>
 </head>
-  <body class="bg-clear dark:bg-night font-body text-night dark:text-clear text-paragraph font-normal px-6 pb-20 lg:px-[172px]">
+  <body class="bg-clear dark:bg-night transition-all font-body text-night dark:text-clear text-paragraph font-normal px-6 pb-20 lg:px-[172px]">
     <header class="mb-36 relative">
       <nav class="max-w-screen-lg pt-10 mx-auto flex flex-row-reverse justify-between lg:flex-row lg:items-center">
   <ul class="flex flex-col items-end lg:flex-row lg:items-center lg:space-x-20">
