@@ -44,7 +44,7 @@
         const savedTheme = localStorage.getItem("theme");
 
         if (!savedTheme) {
-          if (matchMedia("(prefers-color-scheme: dark)")) {
+          if (matchMedia("(prefers-color-scheme: dark)").matches) {
             setDark();
           }
           return;
@@ -59,7 +59,7 @@
         }
       })();
     </script>
-  <link rel="stylesheet" href="/assets/asset.f17b44a7.css"></link><script type="module" src="/entry.66ae47935.js" astro-script="/about/script-0"></script>
+  <link rel="stylesheet" href="/assets/asset.dd08e3dc.css"></link><script type="module" src="/entry.66ae47935.js" astro-script="/about/script-0"></script>
 </head>
   <body class="bg-clear dark:bg-night transition-all font-body text-night dark:text-clear text-paragraph font-normal px-6 pb-20 lg:px-[172px]">
     <header class="mb-36 relative">
@@ -115,7 +115,7 @@
     <h2 class="max-w-[708px] text-big font-bold mb-[46px]">
       Looking for a consultation, interested in working together?
     </h2>
-    <a href="mailto:alecdanz@gmail.com" class="text-link text-regular font-bold no-underline hover:text-link dark:hover:text-link hover:underline">Email me</a>
+    <a href="mailto:alecdanz@gmail.com" class="text-link dark:text-light-link text-regular font-bold no-underline hover:text-link dark:hover:text-light-link hover:underline">Email me</a>
     <div class="w-[259px] h-[6px] bg-cloudy-white dark:bg-cloudy mt-[52px]">
     </div>
   </main>

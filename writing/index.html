@@ -44,7 +44,7 @@
         const savedTheme = localStorage.getItem("theme");
 
         if (!savedTheme) {
-          if (matchMedia("(prefers-color-scheme: dark)")) {
+          if (matchMedia("(prefers-color-scheme: dark)").matches) {
             setDark();
           }
           return;
@@ -59,7 +59,7 @@
         }
       })();
     </script>
-  <link rel="stylesheet" href="/assets/asset.f17b44a7.css"></link><script type="module" src="/entry.66ae47932.js" astro-script="/writing/script-0"></script>
+  <link rel="stylesheet" href="/assets/asset.dd08e3dc.css"></link><script type="module" src="/entry.66ae47932.js" astro-script="/writing/script-0"></script>
 </head>
   <body class="bg-clear dark:bg-night transition-all font-body text-night dark:text-clear text-paragraph font-normal px-6 pb-20 lg:px-[172px]">
     <header class="mb-36 relative">
