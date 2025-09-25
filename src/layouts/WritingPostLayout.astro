@@ -1,0 +1,46 @@
+---
+import { SEO } from "astro-seo";
+import DefaultLayout from "./DefaultLayout.astro";
+import BasePostLayout from "./BasePostLayout.astro";
+
+export interface Content {
+  title: string;
+  date: string;
+  description: string;
+}
+const { content } = Astro.props as { content: Content };
+---
+
+<DefaultLayout>
+  <SEO
+    slot="seo"
+    title={`Alec Danz | ${content.title}`}
+    description={content.description}
+    openGraph={{
+      basic: {
+        title: content.title,
+        type: "article",
+        image: `${Astro.site}share-image.png`,
+      },
+      optional: {
+        description: content.description,
+        siteName: "Alec Danz",
+      },
+      image: {
+        alt: "Alec Danz, the designer of this website, and creator of its content, in portrait",
+      },
+      article: {
+        publishedTime: content.date,
+      },
+    }}
+  />
+
+  <BasePostLayout>
+    <time datetime={content.date}
+      >{new Date(content.date).toLocaleDateString("en-US", {
+        dateStyle: "long",
+      })}</time
+    >
+    <slot />
+  </BasePostLayout>
+</DefaultLayout>

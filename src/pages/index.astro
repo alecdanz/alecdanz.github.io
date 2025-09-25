@@ -1,0 +1,80 @@
+---
+import { SEO } from "astro-seo";
+import mepng from "@/assets/Me.png";
+import mepng2x from "@/assets/Me@2x.png";
+import mepng3x from "@/assets/Me@3x.png";
+import mepng4x from "@/assets/Me@4x.png";
+import CmykIcon from "@/components/CmykIcon.astro";
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+---
+
+<DefaultLayout>
+  <SEO
+    slot="seo"
+    title="Alec Danz | Home"
+    description="Hello, I'm Alec (he/him). I'm digital product designer living and working remotely in Oklahoma City."
+    openGraph={{
+      basic: {
+        title: "Home",
+        type: "website",
+        image: `${Astro.site}share-image.png`,
+      },
+      optional: {
+        description:
+          "Hello, I'm Alec (he/him). I'm a digital product designer living and working remotely in Oklahoma City.",
+        siteName: "Alec Danz",
+      },
+      image: {
+        alt: "Alec Danz, the designer of this website, and creator of its content, in portrait",
+      },
+    }}
+  />
+
+  <main class="max-w-screen-lg mx-auto relative">
+    <img
+      src={mepng.src}
+      srcset={`${mepng2x.src} 2x, ${mepng3x.src} 3x, ${mepng4x.src} 4x`}
+      alt="Alec Danz, the designer of this website, and creator of its content, in portrait"
+      width="92"
+      height="92"
+      class="mb-[17px] lg:absolute lg:top-0 lg:left-[-132px]"
+    />
+    <p
+      class="w-full max-w-[846px] text-[36px] leading-[52px] font-bold mb-10 text-night dark:text-clear"
+    >
+      Hi, I'm Alec. <br />I build design systems that help teams move quickly. 
+    </p>
+    <div
+      class="w-full max-w-[632px] text-overcast dark:text-cream font-semibold text-medium mb-10 space-y-[30px]"
+    >
+      <p>
+        I design systems and experiences that quietly make things better.
+      </p>
+      <p>
+        Right now, I manage Alley-oop, the design system behind 
+        <a href="https://espnbet.com/" target="_blank">ESPN BET</a>,  
+        <a href="https://thescore.com/" target="_blank">theScore</a>, 
+        and Hollywood Casino at Penn Interactive.
+      </p>
+      Previously, I was Lead Product Designer at 
+      <a href="https://prenda.com/" target="_blank">Prenda</a>
+       I built the <a
+          href="https://github.com/prenda-school/design-system"
+          >Prenda Design System</a
+        >, created a <a href="https://microschools.prenda.com/">marketplace</a> for learners and teachers, and helped shape Prenda’s brand story.   
+      </p>
+      <p>
+        Earlier in my career, I helped grow
+        <a
+          href="https://www.legalshield.com/">LegalShield
+          </a
+        >'s design team from two to ten, led a redesign of their mobile experience, and contributed to a full brand refresh.
+      </p>
+      <p>
+        This site is my place to share work, ideas, and the occasional experiment in design.
+      </p>
+    </div>
+    <CmykIcon />
+  </main>
+</DefaultLayout>
+

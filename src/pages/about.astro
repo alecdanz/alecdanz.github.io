@@ -1,0 +1,93 @@
+---
+import { SEO } from "astro-seo";
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+import rockclimbing from "@/assets/rockclimbing.png";
+import rockclimbing2x from "@/assets/rockclimbing@2x.png";
+import rockclimbing3x from "@/assets/rockclimbing@3x.png";
+import rockclimbing4x from "@/assets/rockclimbing@4x.png";
+import alec_gwen from "@/assets/alec_gwen.png";
+import alec_gwen2x from "@/assets/alec_gwen@2x.png";
+import alec_gwen3x from "@/assets/alec_gwen@3x.png";
+import alec_gwen4x from "@/assets/alec_gwen@4x.png";
+import travel from "@/assets/travel.png";
+import travel2x from "@/assets/travel@2x.png";
+import travel3x from "@/assets/travel@3x.png";
+import travel4x from "@/assets/travel@4x.png";
+
+const title = "About";
+const heading = "This page is all about me, Alec";
+---
+
+<DefaultLayout>
+  <SEO
+    slot="seo"
+    title={`Alec Danz | ${title}`}
+    description={heading}
+    openGraph={{
+      basic: {
+        title: title,
+        type: "website",
+        image: `${Astro.site}share-image.png`,
+      },
+      optional: {
+        description: heading,
+        siteName: "Alec Danz",
+      },
+      image: {
+        alt: "Alec Danz, the designer of this website, and creator of its content, in portrait",
+      },
+    }}
+  />
+
+  <main class="max-w-screen-lg mx-auto">
+    <h2 class="text-regular font-bold mb-[1.5em]">{heading}</h2>
+    <div class="max-w-[632px] mb-10">
+      <p>
+        I grew up in North Texas with an early love for design, art, and performance — a passion that led me to earn a degree in Theatrical Design and Production from Oklahoma City University in 2015. That background in storytelling and craft still shapes the way I approach design today.
+      </p>
+      <p>
+        Outside of work, I like to keep my hands (and mind) busy. Some days that means climbing granite walls in the Wichita Mountains, other days it’s woodworking, pottery, or restoring something in my historic home. I love games — Dungeons & Dragons, board games, or a good new video game — and I’m always ready to cook a great dinner or pack a bag for the next trip.
+      </p>
+      <p>
+        These days, home is Oklahoma City, where I live with my wife Tiffany, our daughter Gwen, two dogs (Bilbo and Frodo Baggins), and our cat Lyra.
+      </p>
+    </div>
+    <div class="flex flex-wrap gap-6 mb-[130px]">
+      <img
+        class="bg-placeholder-gray rounded-[4px]"
+        src={rockclimbing.src}
+        srcset={`${rockclimbing2x.src} 2x, ${rockclimbing3x.src} 3x, ${rockclimbing4x.src} 4x`}
+        alt="Climbing in the Wichita Mountains"
+        width="230"
+        height="230"
+      />
+      <img
+        class="bg-placeholder-gray rounded-[4px]"
+        src={alec_gwen.src}
+        srcset={`${alec_gwen2x.src} 2x, ${alec_gwen3x.src} 3x, ${alec_gwen4x.src} 4x`}
+        alt="Me and my daughter enjoying ice cream"
+        width="230"
+        height="230"
+      />
+      <img
+        class="bg-placeholder-gray rounded-[4px]"
+        src={travel.src}
+        srcset={`${travel2x.src} 2x, ${travel3x.src} 3x, ${travel4x.src} 4x`}
+        alt="Travel to Niquragua a street with a sign that says 'ALTO'"
+        width="230"
+        height="230"
+      />
+    </div>
+    <div class="w-[259px] h-[4px]  bg-cream dark:bg-overcast mb-[52px]"></div>
+    
+    <h2 class="max-w-[708px] text-big font-bold mb-[46px]">
+      Looking for a consultation? Interested in working together?
+    </h2>
+    <a
+      href="mailto:alecdanz@gmail.com"
+      class="text-link dark:text-light-link text-regular font-bold no-underline hover:text-link dark:hover:text-light-link hover:underline"
+      >Connect</a
+    >
+    <div class="w-[259px] h-[4px] bg-cream dark:bg-overcast mt-[52px]"></div>
+  </main>
+</DefaultLayout>

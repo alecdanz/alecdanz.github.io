@@ -1,0 +1,59 @@
+---
+import {SEO} from 'astro-seo';
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+
+const posts = await Astro.glob("./*.md").then((posts) =>
+  posts
+    .filter((post) => process.env.NODE_ENV === 'development' || !post.frontmatter.draft)
+    .sort(
+      (a, b) =>
+          new Date(b.frontmatter.date).getTime() -
+          new Date(a.frontmatter.date).getTime()
+      )
+    );
+
+function formatDate(date: string): string {
+  return new Date(date).toLocaleDateString("en-US", { dateStyle: "long" });
+}
+---
+
+<DefaultLayout>
+  <SEO
+    slot="seo"
+    title="Alec Danz | Writing"
+    description="As a part of developing and creating my new website I wanted to include a space where I could share my thoughts. Not just about design but a space where I could talk freely."
+    openGraph={{
+      basic: {
+        title: "Writing",
+        type: "website",
+        image: `${Astro.site}share-image.png`,
+      },
+      optional: {
+        description: "As a part of developing and creating my new website I wanted to include a space where I could share my thoughts. Not just about design but a space where I could talk freely.",
+        siteName: 'Alec Danz'
+      },
+      image: {
+        alt: "Alec Danz, the designer of this website, and creator of its content, in portrait",
+      },
+    }}
+  />
+
+  <main class="max-w-screen-lg mx-auto">
+    <div class="max-w-[632px]">
+    <h2 class="text-regular font-bold mb-6">Writing</h2>
+      <h3 class="text-medium font-semibold mb-[58px]">
+        As a part of developing and creating my new website I wanted to include a
+        space where I could share my thoughts. Not just about design but a space
+        where I could talk freely.
+      </h3>
+      {posts.map((post) => (
+        <a href={post.url} class="block group no-underline border-t-[1px] last:border-b-[1px] border-cream dark:border-overcast">
+          <article class="py-6">
+            <h3 class="text-medium font-semibold">{post.frontmatter.title}</h3>
+            <time datetime={post.frontmatter.date} class="text-cloudy-white dark:text-cloudy">{formatDate(post.frontmatter.date)}</time>
+          </article>
+        </a>
+      ))}
+    </div>
+  </main>
+</DefaultLayout>
