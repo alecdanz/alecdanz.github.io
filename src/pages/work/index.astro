@@ -1,0 +1,212 @@
+---
+import {SEO} from 'astro-seo';
+import DefaultLayout from "@/layouts/DefaultLayout.astro";
+
+interface SelectWork {
+  thumbnail: string;
+  title: string;
+  duration: string;
+  details: string;
+  link: string;
+}
+const selectWorks: SelectWork[] = [
+  {
+    thumbnail: "https://res.craft.do/user/full/6d5aec0c-f6e6-7dbd-27c9-cc314efee476/doc/933C12B0-AC38-403D-BE7B-AA4905BF3793/ADA67359-7B4D-4AFA-83A0-0B70D2D3B8E5_2/AmPmQX5aKXvFkxoA4SSXrmOQLpt8LCnHjtZVvGix8tEz/Prenda%20design%20system.png",
+    title: "Prenda Design System",
+    duration: "2021 - Present",
+    details: "Creation and design of Prenda's internal design system. Manage figma implementation, design system documentation, and assets.",
+    link: "/work/prenda-design-system",
+  },
+  {
+    thumbnail: "https://res.craft.do/user/full/6d5aec0c-f6e6-7dbd-27c9-cc314efee476/doc/933C12B0-AC38-403D-BE7B-AA4905BF3793/ADE4ED37-9940-4580-A195-BF4552DA8C89_2/4VknG2rIdYhUPXZLWCg2emI4GYUQNmIXN8qyBo6eydkz/map.png",
+    title: "Prenda marketplace",
+    duration: "2021 - Present",
+    details: "Product design work, our goal was to solve how parents and students connect find their next microschool guide.",
+    link: "/work/prenda-marketplace",
+  },
+  {
+    thumbnail: "https://res.craft.do/user/full/6d5aec0c-f6e6-7dbd-27c9-cc314efee476/doc/933C12B0-AC38-403D-BE7B-AA4905BF3793/C262CD08-EC7F-4BE2-B0BA-A2953A78C8CF_2/dLxZNd7qUpiPDzsky9oUbk8vlfRbNvvsqHiQc66E4SYz/member.png",
+    title: "LegalShield member experience",
+    duration: "2020 - 2021",
+    details:
+      "Lead design work for the LegalShield member experience. LegalShield is a subscription based legal service.",
+    link: "/work/legalshield-member-experience",
+  },
+  // TODO: consider moving this data in the frontmatter of the markdown files to better support drafts
+  // {
+  //   thumbnail: "https://res.craft.do/user/full/6d5aec0c-f6e6-7dbd-27c9-cc314efee476/doc/933C12B0-AC38-403D-BE7B-AA4905BF3793/B3FBAFF0-C767-4F8E-AB2A-2163BF535C22_2/4tFr8z2gwV24tSn6ZLhGfMVyNXYEyDbJVDArVOywtx8z/Mandela.png",
+  //   title: "Mandela design system",
+  //   duration: "2019 - 2021",
+  //   details:
+  //     "LegalShields internal design system, Mandela. Designed & maintained figma components, branding rework, helped to define illustration strategy.",
+  //   link: "/work/mandela-design-system",
+  // },
+];
+
+interface ResumeItem {
+  title: string,
+  organization: {
+    name: string,
+    link: string
+  },
+  duration: string,
+  details: string
+}
+const resume: ResumeItem[] = [
+{
+    title: 'Stagg Product Designer',
+    organization: {
+      name: 'theScore / Penn Interactive',
+      link: 'https://www.thescore.com/'
+    },
+    duration: '2023 - Present',
+    details: 'Currently serving as Staff Product Designer at theScore, leading Alley-oop, the design system powering ESPN BET, theScore, and Hollywood Casino. Responsibilities include managing tokens and components, launching new brands, and collaborating with stakeholders to scale design across platforms. Mentorship is a key focus, guiding designers to grow their craft and contribute effectively to the system.'
+  },
+  {
+    title: 'Lead Product Designer',
+    organization: {
+      name: 'Prenda',
+      link: 'https://www.prenda.com/'
+    },
+    duration: '2021 - 2023',
+    details: 'Created the Prenda Marketplace experience facilitating the connection of parents with guides in their communities. Designed, managed, and maintained aspects of the Prenda Design System. Lead a brand refresh as Prenda continued to evolve in the market.'
+  },
+  {
+    title: 'Associate Principal UX Designer',
+    organization: {
+      name: 'LegalShield',
+      link: 'https://www.legalshield.com/'
+    },
+    duration: '2018 - 2021',
+    details: 'Designed customer experiences for the LegalShield member. Full redesign of the member mobile app. Other roles include - Lead Product Designer, Senior Product Designer, and a Product Designer.'
+  },
+  {
+    title: 'UX Designer',
+    organization: {
+      name: 'Paycom',
+      link: 'https://www.paycom.com/'
+    },
+    duration: '2017 - 2018',
+    details: 'Facilitated business product visions through user research, ideation, and prototyping user experiences for various Paycom applications.'
+  },
+  {
+    title: 'UX Designer',
+    organization: {
+      name: 'UX Alley',
+      link: 'https://www.uxalley.com/'
+    },
+    duration: '2016 - 2017',
+    details: 'Agency style work with clients from various industries retail, pharmaceutical, insurance, and financial services. Responsibilities included - iconography, prototyping, wireframing and other production efforts.'
+  },
+  {
+    title: 'Web Designer',
+    organization: {
+      name: 'Combustion Group',
+      link: 'https://combustion.com/'
+    },
+    duration: '2014 - 2016',
+    details: 'Designed for iPad, Mobile, Desktop, and TVos for multiple different clients. By the end of my tenure I was leading a small group of 3 designers on multiple efforts.'
+  },
+]
+
+const volunteerExperience: ResumeItem[] = [
+  {
+    title: 'Mentor',
+    organization: {
+      name: 'adplist.org',
+      link: 'https://www.adplist.org/mentors/alec-danz'
+    },
+    duration: '2021 - Present',
+    details: 'Mentored designer on the Amazing Design People list, giving back to the design community.'
+  },
+  {
+    title: 'Board Member',
+    organization: {
+      name: 'OKC Design + Tech',
+      link: 'https://www.meetup.com/OKC-Design-Tech/'
+    },
+    duration: '2019 - 2021',
+    details: 'Planning and hosting regular user group meetings, events, and gatherings. Finding and sourcing keynote speakers for group meetings.'
+  },
+]
+---
+
+<DefaultLayout>
+  <SEO
+    slot="seo"
+    title="Alec Danz | Work"
+    description="My select work, resume, and volunteer experience"
+    openGraph={{
+      basic: {
+        title: "Work",
+        type: "website",
+        image: `${Astro.site}share-image.png`,
+      },
+      optional: {
+        description: "My select work, resume, and volunteer experience",
+        siteName: "Alec Danz"
+      },
+      image: {
+        alt: "Alec Danz, the designer of this website, and creator of its content, in portrait",
+      },
+    }}
+  />
+
+  <main class="max-w-screen-lg mx-auto">
+    <div class="max-w-[716px]">
+      <section class="mb-40">
+        <h2
+          class="text-regular font-bold pb-6 border-b-[1px] border-cream dark:border-overcast mb-6"
+        >
+          Select Work
+        </h2>
+        {selectWorks.map(({thumbnail, title, duration, details, link}) => (
+          <a href={link} class="group no-underline hover:text-inherit dark:hover:text-inherit">
+            <article class="flex flex-col lg:items-start lg: mb-10">
+              <img src={thumbnail} width="716" height="208" class="max-h-52 bg-placeholder-gray rounded-lg mb-[6px]" />
+              <div class="w-full">
+                <header class="flex flex-col lg:flex-row lg:justify-between mb-[6px]">
+                  <h3 class="text-medium font-semibold text-night dark:text-clear group-hover:text-cloudy-white dark:group-hover:text-cloudy group-hover:underline">{title}</h3>
+                  <span class="text-paragraph text-cloudy-white dark:text-cloudy">{duration}</span>
+                </header>
+                <p class="mb-[6px]">{details}</p>
+              </div>
+            </article>
+          </a>
+        ))}
+      </section>
+      <section class="mb-40">
+        <h2 
+          class="text-regular font-bold pb-6 border-b-[1px] border-cream dark:border-overcast mb-6"
+        >
+          Resume
+        </h2>
+        {resume.map(({title, organization, duration, details}) => (
+          <article class="mb-10">
+            <header class="flex flex-col lg:flex-row lg:justify-between mb-[6px]">
+              <h3 class="font-semibold text-medium text-night dark:text-clear">{title} • <a href={organization.link}>{organization.name}</a></h3>
+              <span class="text-paragraph text-cloudy-white dark:text-cloudy">{duration}</span>
+            </header>
+            <p>{details}</p>
+          </article>
+        ))}
+      </section>
+      <section class="mb-40">
+        <h2
+          class="text-regular font-bold pb-6 border-b-[1px] border-cream dark:border-overcast mb-6"
+        >
+          Volunteer Experience
+        </h2>
+        {volunteerExperience.map(({title, organization, duration, details}) => (
+          <article class="mb-10">
+            <header class="flex flex-col lg:flex-row lg:justify-between mb-[6px]">
+              <h3 class="text-medium font-semibold text-night dark:text-clear">{title} • <a href={organization.link}>{organization.name}</a></h3>
+              <span class="text-paragraph text-cloudy-white dark:text-cloudy">{duration}</span>
+            </header>
+            <p>{details}</p>
+          </article>
+        ))}
+      </section>
+    </div>
+  </main>
+</DefaultLayout>

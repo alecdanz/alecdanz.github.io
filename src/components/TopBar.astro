@@ -1,0 +1,61 @@
+---
+import DarkModeToggle from '@/components/DarkModeToggle.astro';
+
+const url = new URL(Astro.request.url);
+
+interface Link {
+  href: string,
+  active: boolean, 
+  text: string
+}
+const links: Link[] = [
+  {
+    href: '/',
+    active: url.pathname === '/',
+    text: 'Home'
+  },
+  {
+    href: '/work',
+    active: url.pathname.startsWith('/work'),
+    text: 'Work'
+  },
+  {
+    href: '/writing',
+    active: url.pathname.startsWith('/writing'),
+    text: 'Writing'
+  },
+  {
+    href: '/about',
+    active: url.pathname.startsWith('/about'),
+    text: 'About'
+  },
+]
+
+function linkClass(link: Link): string {
+  const base =
+    "text-regular text-overcast font-bold hover:text-cloudy-white dark:text-cream dark:hover:text-cloudy no-underline";
+  const circle = link.active
+      ? "text-night dark:text-clear flex items-center relative before:block before:w-6 before:h-6 before:rounded-full before:absolute before:left-[-30px]"
+      : "";
+  const color = {
+    Home: "before:bg-orange",
+    Work: "before:bg-magenta",
+    Writing: "before:bg-yellow",
+    About: "before:bg-cyan",
+  }[link.text];
+  return `${base} ${circle} ${color}`;
+}
+---
+
+<nav class="max-w-screen-lg pt-10 mx-auto flex flex-row-reverse justify-between lg:flex-row lg:items-center">
+  <ul class="flex flex-col items-end lg:flex-row lg:items-center lg:space-x-20">
+    {links.map((link) => (
+      <li>
+        {link.active
+          ? <h1><a href={link.href} class={linkClass(link)} aria-current>{link.text}</a></h1>
+          : <a href={link.href} class={linkClass(link)}>{link.text}</a>}
+      </li>
+    ))}
+  </ul>
+  <DarkModeToggle />
+</nav>

@@ -1,0 +1,47 @@
+---
+import TopBar from "@/components/TopBar.astro";
+import "@/styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <slot name="seo" />
+    <script is:inline>
+      (function setTheme() {
+        const savedTheme = localStorage.getItem("theme");
+
+        if (!savedTheme) {
+          if (matchMedia("(prefers-color-scheme: dark)").matches) {
+            setDark();
+          }
+          return;
+        }
+
+        if (savedTheme === "dark") {
+          setDark();
+        }
+
+        function setDark() {
+          document.documentElement.classList.add("dark");
+        }
+      })();
+    </script>
+  </head>
+  <body
+    class="bg-clear dark:bg-night transition-all font-body text-night dark:text-clear text-paragraph font-normal px-6 pb-20 lg:px-[172px]"
+  >
+    <header class="mb-36 relative">
+      <TopBar />
+    </header>
+    <slot />
+  </body>
+</html>
