@@ -39,6 +39,5 @@ Helped evaluate different documentation site options and lay the structure and o
 
 Created a structure to do theming overwriting in Figma allowing for ad hoc themes to be stood up that referenced other brands, only overwriting certain assets. 
 
-----
 
 [← Return to work](https://alecdanz.github.io/work/)
