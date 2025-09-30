@@ -5,7 +5,7 @@ description: "Staff designer making all of the things happen."
 ---
 **Role - Staff Product Designer** 
 
-# Typography standards + tokenization 
+## Typography standards + tokenization 
 
 Migrated system font's to a simplified tokenized system typography system. Reducing time spent designing for Android and iOS while elevating branding opportunities.  
 
@@ -13,7 +13,7 @@ Migrated system font's to a simplified tokenized system typography system. Reduc
 
 ---
 
-# Spacing tokens
+## Spacing tokens
 
 Tokenization of spacing, grid structures, and layouts for the Alley-oop Design System. 
 
@@ -21,7 +21,7 @@ Tokenization of spacing, grid structures, and layouts for the Alley-oop Design S
 
 ---
 
-# Component reorganization and restructuring
+## Component reorganization and restructuring
 
 Created a component database to track the status of components. Created scalable processes for building components, and for designers on the design system team to design components. 
 
@@ -29,7 +29,7 @@ Created a component database to track the status of components. Created scalable
 
 ---
 
-# Open Component contribution processes
+## Open Component contribution processes
 
 Opened component building and requests for component changes. 
 
@@ -37,13 +37,13 @@ Opened component building and requests for component changes.
 
 ---
 
-# Documentation site
+## Documentation site
 
 Helped evaluate different documentation site options and lay the structure and organization for the Alley-oop design system documentation website. 
 
 ![Example of the input component on the Alley-oop doc site](https://resv2.craft.do/user/full/6d5aec0c-f6e6-7dbd-27c9-cc314efee476/doc/E6DBE334-B047-4F17-AE93-D093D8BC4462/F29F3E7B-7C48-41F5-B519-20CCE8564D97_2/Yrhk34SiRbx3fjSSe02LE2qQ2qV2KDM4yf68CekM4lcz/Image.png)
 
-# Extensible theming
+## Extensible theming
 
 Created a structure to do theming overwriting in Figma allowing for ad hoc themes to be stood up that referenced other brands, only overwriting certain assets. 
 
