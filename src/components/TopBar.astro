@@ -20,11 +20,6 @@ const links: Link[] = [
     text: 'Work'
   },
   {
-    href: '/writing',
-    active: url.pathname.startsWith('/writing'),
-    text: 'Writing'
-  },
-  {
     href: '/about',
     active: url.pathname.startsWith('/about'),
     text: 'About'
@@ -40,7 +35,6 @@ function linkClass(link: Link): string {
   const color = {
     Home: "before:bg-orange",
     Work: "before:bg-magenta",
-    Writing: "before:bg-yellow",
     About: "before:bg-cyan",
   }[link.text];
   return `${base} ${circle} ${color}`;
